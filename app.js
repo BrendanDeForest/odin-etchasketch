@@ -1,7 +1,7 @@
 console.log("script is running");
 
-const totalColumns = 16;
-const totalRows = 16;
+let totalColumns = 16;
+let totalRows = 16;
 
 
 function createCell() {
@@ -44,6 +44,20 @@ function createGrid(totalColumns, totalRows){
         createRow();
 
     };
+};
+
+function clearGrid() {
+    let elem = document.getElementById("container");
+    elem.innerHTML = "";
+    // elem.parentNode.removeChild(elem);
+
+    let totalSquaresPerSide = prompt("How many squares per side would you like?");
+
+    totalRows = totalSquaresPerSide;
+    totalColumns = totalSquaresPerSide;
+
+    createGrid(totalColumns,totalRows);
+    
 };
 
 createGrid(totalColumns,totalRows);
