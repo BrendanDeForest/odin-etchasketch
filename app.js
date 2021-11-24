@@ -13,6 +13,11 @@ function createCell() {
     newDiv.style.border = "1px solid black";
     newDiv.style.float = "left";
 
+    //On hover, change background to black
+    newDiv.onmouseover = function() {
+        newDiv.style.background = "#000";
+    }
+
     // add the newly created element and its content into the DOM
     document.getElementById("container").appendChild(newDiv);
 }
