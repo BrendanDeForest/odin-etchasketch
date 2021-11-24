@@ -47,17 +47,24 @@ function createGrid(totalColumns, totalRows){
 };
 
 function clearGrid() {
+    //Removes all Divs from container
     let elem = document.getElementById("container");
     elem.innerHTML = "";
-    // elem.parentNode.removeChild(elem);
 
+    //Asks user how many squares for new grid.  Sets max to 100 squares.
     let totalSquaresPerSide = prompt("How many squares per side would you like?");
+    while (totalSquaresPerSide > 100){
+        alert("This is too many squares. To prevent issues, please use a number <= 100.");
+        totalSquaresPerSide = prompt("How many squares per side would you like?");
+    }
 
+    //Creats new grid
     totalRows = totalSquaresPerSide;
     totalColumns = totalSquaresPerSide;
-
     createGrid(totalColumns,totalRows);
-    
 };
 
 createGrid(totalColumns,totalRows);
+
+
+// Need to figure out how to make cells on each row fill container width.
